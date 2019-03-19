@@ -10,3 +10,8 @@ form {
     border: 2px solid black;
     margin: 5rem;
 }
+
+#img-logo {
+    width: 50%;
+    margin-left: 3rem;
+}

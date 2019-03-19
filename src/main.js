@@ -17,6 +17,13 @@ firebase.auth().onAuthStateChanged(function(user) {
       // User is signed in.
       document.querySelector("#user_view").style.display = "none";
       document.querySelector("#login_view").style.display = "block";
+      
+      var user = firebase.auth().currentUser;
+
+      if(user != null){
+        var emailId = user.email;
+        alert("Bienvenid@ " + emailId);
+      }
     } else {
       // No user is signed in.
       document.querySelector("#user_view").style.display = "block";
@@ -40,3 +47,16 @@ function login () {
         
     });
 }
+
+function logout () {
+  //console.log("bye");
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    console.log("Regresa pronto");
+    
+  }).catch(function(error) {
+    // An error happened.
+  }); 
+}
+
+//https://www.w3schools.com/jsref/prop_html_contenteditable.asp

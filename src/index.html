@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="row valign-wrapper">
-        <img class="responsive-img col s11" src="img/Game_Planet_Logo.png" alt="Game Planet">
-    </header>
     <section id="user_view" class="container center-align">
+        <header class="row valign-wrapper">
+            <img class="responsive-img col s11" src="img/Gamer_Planet_Logo.png" alt="Game Planet">
+        </header>
         <form class="row">
             <div class="input-field col s10 offset-s1">
             <i class="material-icons prefix">email</i>
@@ -31,11 +31,29 @@
     </section>
 
     <section id="login_view">
-        <h1> Bienvenid@ </h1>
+        <nav> 
+            <div class="nav-wrapper">
+                <div id="img-logo" class="">
+                    <img src="img/Gamer_Planet_Logo.png" alt="Gamer Planet" class="brand-logo responsive-img">
+                </div>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Perfil</a></li>
+                <li><a href="">Amigos</a></li>
+                <li id="logout"><a>Salir</a></li>
+              </ul>
+        </nav>
     </section>
         
     
     <!-- SCRIPTS-->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="main.js"></script>
