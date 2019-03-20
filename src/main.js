@@ -1,13 +1,3 @@
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAl-oRWi6b4nmvuDZgvDsjZiG9ZIKihW_8",
-    authDomain: "gameplanet-2a419.firebaseapp.com",
-    databaseURL: "https://gameplanet-2a419.firebaseio.com",
-    projectId: "gameplanet-2a419",
-    storageBucket: "gameplanet-2a419.appspot.com",
-    messagingSenderId: "793786043677"
-  };
-
 firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -54,9 +44,9 @@ function logout () {
     // Sign-out successful.
     console.log("Regresa pronto");
     
-  }).catch(function(error) {
-    // An error happened.
   }); 
 }
 
-//https://www.w3schools.com/jsref/prop_html_contenteditable.asp
+
+let historyObj = window.history;
+// console.log(historyObj);
