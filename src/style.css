@@ -1,5 +1,6 @@
 body {
     /*background-color: black;*/
+    font-family: 'Quantico', sans-serif;
 }
 
 header {
@@ -11,7 +12,25 @@ form {
     margin: 5rem;
 }
 
+nav {
+    /* height: 10rem; */
+}
+
 #img-logo {
-    width: 50%;
-    margin-left: 3rem;
+   /* height: 3rem !important;
+   border: 1px solid black; */
+}
+
+section #home-section {
+    /* border: 2px solid black; */
+    margin-top: 5rem;
+}
+
+#profile-img {
+    height: 7rem;
+    align-items: center;
+}
+
+h4 {
+    /* bold */
 }
