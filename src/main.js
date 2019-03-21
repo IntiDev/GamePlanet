@@ -1,13 +1,3 @@
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAl-oRWi6b4nmvuDZgvDsjZiG9ZIKihW_8",
-    authDomain: "gameplanet-2a419.firebaseapp.com",
-    databaseURL: "https://gameplanet-2a419.firebaseio.com",
-    projectId: "gameplanet-2a419",
-    storageBucket: "gameplanet-2a419.appspot.com",
-    messagingSenderId: "793786043677"
-  };
-
 firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
