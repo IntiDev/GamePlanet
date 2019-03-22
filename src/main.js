@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       if(user != null){
         var emailId = user.email;
-        alert("Bienvenid@ " + emailId);
+        //alert("Bienvenid@ " + emailId);
       }
     } else {
       // No user is signed in.
@@ -93,28 +93,29 @@ const friendsPage = `<ul class="collection center"">
                     </ul> `;
 
 const routes = {
-  '/': homePage,
-  '/profile': profilePage,
-  '/friends': friendsPage
+  'home': homePage,
+  'profile': profilePage,
+  'friends': friendsPage
 };
 
 console.log(window.location.pathname);
 // console.log(location.hostname);
-console.log(location);
+//console.log(location);
 
 
 
-let contentSection = document.querySelector('#login-view');
-console.log(routes[window.location.pathname]);
-
+let contentSection = document.querySelector('#home-section');
+//console.log(routes['/']);
+contentSection.innerHTML = routes['home']
 //contentSection.innerHTML = routes[window.location.pathname];
+window.history.pushState({},"home", window.location.pathname + 'home' );
 
-let onNavItemClick = (pathName) => {
-  window.history.pushState(
-    {}, 
-    pathName,
-    window.location.origin + pathName
-  );
+// let onNavItemClick = (pathName) => {
+//   window.history.pushState(
+//     {}, 
+//     pathName,
+//     window.location.origin + pathName
+//   );
 
-  contentDiv.innerHTML = routes[pathName];
-}
+//   contentDiv.innerHTML = routes[pathName];
+// }
