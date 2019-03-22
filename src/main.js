@@ -98,17 +98,17 @@ const routes = {
   'friends': friendsPage
 };
 
-console.log(window.location.pathname);
+//console.log(window.location.pathname);
 // console.log(location.hostname);
 //console.log(location);
 
 
 
-let contentSection = document.querySelector('#home-section');
-//console.log(routes['/']);
-contentSection.innerHTML = routes['home']
-//contentSection.innerHTML = routes[window.location.pathname];
-window.history.pushState({},"home", window.location.pathname + 'home' );
+// let contentSection = document.querySelector('#home-section');
+// //console.log(routes['/']);
+// contentSection.innerHTML = routes['home']
+// //contentSection.innerHTML = routes[window.location.pathname];
+// window.history.pushState({},"home", window.location.pathname + 'home' );
 
 // let onNavItemClick = (pathName) => {
 //   window.history.pushState(
@@ -119,3 +119,16 @@ window.history.pushState({},"home", window.location.pathname + 'home' );
 
 //   contentDiv.innerHTML = routes[pathName];
 // }
+
+const goHome = document.querySelector('#go-home');
+const goProfile = document.querySelector('#go-profile');
+const gofriends = document.querySelector('#go-friends');
+
+goProfile.addEventListener("click", prueba);
+
+//console.log(goHome.dataset.name);
+
+function prueba (dataset) {
+  console.log("prueba");
+  
+}
