@@ -83,14 +83,34 @@ const profilePage = `<h4 class="center"> PROFILE </h4>
                                 <P> pas245&/</P>
                             </li>
                         </ul> `;
-const friendsPage = `<ul class="collection center"">
-                        <img id="profile-img" src="img/profile_photo.png" alt="" class="circle col s4">
-                        <li class="collection-item avatar">
-                            <span class="title">User name</span>
-                            <p> email@domine.com </p>
-                            <P> pas245&/</P>
-                        </li>
-                    </ul> `;
+const friendsPage = `<ul class="collection">
+                      <li class="collection-item avatar">
+                          <img src="img/friend1_photo.png" alt="" class="circle">
+                          <span class="title">User name</span>
+                          <p> 
+                              Description
+                          </p>
+                          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                      </li>
+
+                      <li class="collection-item avatar">
+                          <img src="img/friend2_photo.png" alt="" class="circle">
+                          <span class="title">User name</span>
+                          <p> 
+                              Description
+                          </p>
+                          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                      </li>
+
+                      <li class="collection-item avatar">
+                          <img src="img/friend3_photo.png" alt="" class="circle">
+                          <span class="title">User name</span>
+                          <p> 
+                              Description
+                          </p>
+                          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                      </li>
+                    </ul>  `;
 
 const routes = {
   'home': homePage,
@@ -98,11 +118,9 @@ const routes = {
   'friends': friendsPage
 };
 
-console.log(window.location.pathname);
+//console.log(window.location.pathname);
 // console.log(location.hostname);
 //console.log(location);
-
-
 
 let contentSection = document.querySelector('#home-section');
 //console.log(routes['/']);
@@ -122,14 +140,37 @@ window.history.pushState({},"home", window.location.pathname + 'home' );
 
 const goHome = document.querySelector('#go-home');
 const goProfile = document.querySelector('#go-profile');
-const gofriends = document.querySelector('#go-friends');
+const goFriends = document.querySelector('#go-friends');
 
-gofriends.addEventListener("click", prueba);
+goHome.addEventListener("click", showContent);
+goProfile.addEventListener("click", showContent);
+goFriends.addEventListener("click", showContent);
 
 //console.log(goHome.dataset.name);
 
-function prueba (event) {
-  console.log(event.target.dataset.name);
+function showContent (event) {
+  const dataSection = event.target.dataset.name;
+  console.log(dataSection);
+  switch (dataSection) {
+    case 'home':
+      // console.log("Home");
+      contentSection.innerHTML = routes['home']
+      window.history.pushState({},"home", window.location.pathname + 'home' );
+      break;
+    case 'profile':
+    // console.log("Profile");
+      contentSection.innerHTML = routes['profile']
+      window.history.pushState({},"profile", window.location.pathname + 'profile' );
+      break;
+    case 'friends':
+    // console.log("Friends");
+      contentSection.innerHTML = routes['friends']
+      window.history.pushState({},"friends", window.location.pathname + 'friends' );
+      break;
+    default:
+      console.log("Error");
+      break;
+  }
   
   
 }
