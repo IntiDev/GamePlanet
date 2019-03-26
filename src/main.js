@@ -1,5 +1,11 @@
 firebase.initializeApp(config);
 
+function loadSection () {
+  console.log(window.location.pathname);
+}
+
+window.onload = loadSection;
+
 firebase.auth().onAuthStateChanged(function(user) {
     //console.log(user);
     if (user) {
@@ -7,11 +13,12 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.querySelector('#user-view').style.display = 'none';
       document.querySelector('#login-view').style.display = 'block';
       
-      var user = firebase.auth().currentUser;
+      let user = firebase.auth().currentUser;
 
       if(user != null){
-        var emailId = user.email;
+        let emailId = user.email;
         //alert('Bienvenid@ ' + emailId);
+
       }
     } else {
       // No user is signed in.
@@ -119,7 +126,8 @@ const routes = {
 //console.log(location);
 
 let contentSection = document.querySelector('#home-section');
-contentSection.innerHTML = routes['home'];
+contentSection.innerHTML = routes['home']
+//contentSection.innerHTML = routes[window.location.pathname];
 window.history.pushState({},'home', window.location.pathname + 'home' );
 
 // let onNavItemClick = (pathName) => {
