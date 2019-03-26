@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       if(user != null){
         var emailId = user.email;
-        alert("Bienvenid@ " + emailId);
+        //alert("Bienvenid@ " + emailId);
       }
     } else {
       // No user is signed in.
