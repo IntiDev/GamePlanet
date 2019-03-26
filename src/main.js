@@ -126,9 +126,9 @@ const routes = {
 //console.log(location);
 
 let contentSection = document.querySelector('#home-section');
-contentSection.innerHTML = routes['home']
+contentSection.innerHTML = routes[window.location.pathname.split("/").slice(-1)]
 //contentSection.innerHTML = routes[window.location.pathname];
-window.history.pushState({},'home', window.location.pathname + 'home' );
+window.history.pushState({},'home', cleanPath(window.location.pathname) + window.location.pathname.split("/").slice(-1) );
 
 // let onNavItemClick = (pathName) => {
 //   window.history.pushState(
