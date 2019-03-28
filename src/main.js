@@ -1,54 +1,48 @@
 firebase.initializeApp(config);
 
 function loadSection () {
-  console.log(window.location.pathname);
-}
-
-window.onload = loadSection;
-
-firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function(user) {
     //console.log(user);
     if (user) {
       // User is signed in.
       document.querySelector('#user-view').style.display = 'none';
       document.querySelector('#login-view').style.display = 'block';
-      
+
       let user = firebase.auth().currentUser;
 
       if(user != null){
         let emailId = user.email;
         //alert('Bienvenid@ ' + emailId);
-
       }
     } else {
       // No user is signed in.
       document.querySelector('#user-view').style.display = 'block';
       document.querySelector('#login-view').style.display = 'none';
     }
-});
-  
+  });
 
-function login () {
-    console.log('login');
-    let userEmail = document.querySelector('#email_field').value;
-    let userPassword = document.querySelector('#password_field').value;
-    //console.log( userEmail + userPassword);
 
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+  function login () {
+      console.log('login');
+      let userEmail = document.querySelector('#email_field').value;
+      let userPassword = document.querySelector('#password_field').value;
+      //console.log( userEmail + userPassword);
 
-        console.error('Error: ' + errorMessage);
-    });
-}
+      firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
 
-function logout () {
-  console.log('bye');
-  firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-    console.log('Regresa pronto');
-  }); 
+          console.error('Error: ' + errorMessage);
+      });
+  }
+
+  function logout () {
+    console.log('bye');
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log('Regresa pronto');
+  });
 }
 
 //location.replace()
@@ -90,7 +84,7 @@ const friendsPage = `<ul class='collection'>
                       <li class='collection-item avatar'>
                           <img src='img/friend1_photo.png' alt='' class='circle'>
                           <span class='title'>User name</span>
-                          <p> 
+                          <p>
                               Description
                           </p>
                           <a href='#!' class='secondary-content'><i class='material-icons'>grade</i></a>
@@ -99,7 +93,7 @@ const friendsPage = `<ul class='collection'>
                       <li class='collection-item avatar'>
                           <img src='img/friend2_photo.png' alt='' class='circle'>
                           <span class='title'>User name</span>
-                          <p> 
+                          <p>
                               Description
                           </p>
                           <a href='#!' class='secondary-content'><i class='material-icons'>grade</i></a>
@@ -108,7 +102,7 @@ const friendsPage = `<ul class='collection'>
                       <li class='collection-item avatar'>
                           <img src='img/friend3_photo.png' alt='' class='circle'>
                           <span class='title'>User name</span>
-                          <p> 
+                          <p>
                               Description
                           </p>
                           <a href='#!' class='secondary-content'><i class='material-icons'>grade</i></a>
@@ -121,24 +115,11 @@ const routes = {
   'friends': friendsPage
 };
 
-//console.log(window.location.pathname);
-// console.log(location.hostname);
-//console.log(location);
-
 let contentSection = document.querySelector('#home-section');
-contentSection.innerHTML = routes[window.location.pathname.split("/").slice(-1)]
 //contentSection.innerHTML = routes[window.location.pathname];
-window.history.pushState({},'home', cleanPath(window.location.pathname) + window.location.pathname.split("/").slice(-1) );
-
-// let onNavItemClick = (pathName) => {
-//   window.history.pushState(
-//     {}, 
-//     pathName,
-//     window.location.origin + pathName
-//   );
-
-//   contentDiv.innerHTML = routes[pathName];
-// }
+window.history.pushState({},'home', cleanPath(window.location.pathname) + 'home' );
+console.log(window.location.pathname.split("/"));
+contentSection.innerHTML = routes[window.location.pathname.split("/").slice(-1)];
 
 const goHome = document.querySelector('#go-home');
 const goProfile = document.querySelector('#go-profile');
@@ -152,7 +133,7 @@ goFriends.addEventListener('click', showContent);
 
 function cleanPath (url) {
   let arrayUrl = url.split('/');
-  
+  //console.log(arrayUrl.slice(0,arrayUrl.length -1).join('/') + '/');
   return arrayUrl.slice(0,arrayUrl.length -1).join('/') + '/';
 }
 
@@ -176,6 +157,14 @@ function showContent (event) {
       console.log('Error');
       break;
   }
-  
-  
-}
+
+
+} //showContent
+
+}//loadSection
+
+window.onload = loadSection;
+
+
+
+
