@@ -1,5 +1,8 @@
 {
-    "redirects": [
-      {"source":"/some/old/path", "destination":"/src/index.html"},
-    ]
-  }
+  "redirects": [
+      {
+          "source": "./src/*",
+          "destination": "./src/index.html"
+      }
+  ]
+}
