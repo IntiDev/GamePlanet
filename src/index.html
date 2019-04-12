@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section id="user-view" class="container center-align">
         <header class="row valign-wrapper">
@@ -18,14 +20,14 @@
         </header>
         <form class="row">
             <div class="input-field col s10 offset-s1">
-            <i class="material-icons prefix">email</i>
-            <input id="email_field" type="text" class="validate">
-            <label for="email_field">Correo</label>
+                <i class="material-icons prefix">email</i>
+                <input id="email_field" type="text" class="validate">
+                <label for="email_field">Correo</label>
             </div>
             <div class="input-field col s10 offset-s1">
-            <i class="material-icons prefix">lock</i>
-            <input id="password_field" type="password" class="validate">
-            <label for="password_field">Contraseña</label>
+                <i class="material-icons prefix">lock</i>
+                <input id="password_field" type="password" class="validate">
+                <label for="password_field">Contraseña</label>
             </div>
         </form>
         <button id="login" class="btn waves-effect waves-light"> Iniciar sesión </button>
@@ -49,8 +51,7 @@
             <li id="go-friends"><a data-name="friends">Amigos</a></li>
             <li id="logout"><a>Salir</a></li>
         </ul>
-
-
+        <!-- Home section -->
         <section id="home-section">
             <!--
             <div class="row">
@@ -70,7 +71,7 @@
             </div>
             -->
         </section>
-
+        <!-- Profile section -->
         <section id="profile-section">
             <!--
             <h4 class="center"> PROFILE </h4>
@@ -84,53 +85,23 @@
             </ul>
             -->
         </section>
+        <!-- Friends section -->
         <section id="friends-section">
-            <!--
-            <h4 class="center"> FRIENDS </h4>
-            <ul class="collection">
-                <li class="collection-item avatar">
-                    <img src="img/friend1_photo.png" alt="" class="circle">
-                    <span class="title">User name</span>
-                    <p>
-                        Description
-                    </p>
-                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                </li>
-
-                <li class="collection-item avatar">
-                    <img src="img/friend2_photo.png" alt="" class="circle">
-                    <span class="title">User name</span>
-                    <p>
-                        Description
-                    </p>
-                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                </li>
-
-                <li class="collection-item avatar">
-                    <img src="img/friend3_photo.png" alt="" class="circle">
-                    <span class="title">User name</span>
-                    <p>
-                        Description
-                    </p>
-                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                </li>
-            </ul>
-            -->
+  
         </section>
     </section>
 
-
     <!-- SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-    </script>
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="configFirebase.js"></script>
-    
+    <script src="templates.js"></script>
     <script src="main.js"></script>
     <script src="index.js"></script>
 
 </body>
+
 </html>
